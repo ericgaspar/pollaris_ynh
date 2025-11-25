@@ -7,7 +7,7 @@ name = "Pollaris"
 description.en = "Explain in *a few (10~15) words* the purpose of the app or what it actually does (it is meant to give a rough idea to users browsing a catalog of 100+ apps)"
 description.fr = "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
 
-version = "1.0~ynh1"
+version = "1.1.2~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -65,26 +65,26 @@ ram.runtime = "50M"
     [resources.sources]
 
     [resources.sources.main]
-    url = "https://github.com/foo/bar/archive/refs/tags/v1.2.3.tar.gz"
-    sha256 = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    url = "https://framagit.org/pollaris/pollaris/-/archive/1.1.2/pollaris-1.1.2.tar.gz"
+    sha256 = "37dac26d5379aef0caa2a45fe47bc1a2c7ef5baeaf23d9de46d89a67560873db"
 
     # autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
+    allow_email = true
 
     [resources.install_dir]
-
-    [resources.data_dir]
+    group = "www-data:r-x"
 
     [resources.permissions]
     main.url = "/"
 
     [resources.apt]
 
-    packages = "mariadb-server, php8.2-fpm"
+    packages = "postgresql, php8.2-fpm"
 
     [resources.database]
-    type = "mysql"
+    type = "postgresql"
 
     [resources.composer]
     version = "2.8.1"
